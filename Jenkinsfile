@@ -15,7 +15,7 @@ pipeline {
         GIT_CREDENTIALS_ID = 'github-cred'
 
         // Manifest repository configuration
-        MANIFEST_REPO = 'https://github.com/Johnjose10/REPLACE_WITH_MANIFEST_REPO.git'
+        MANIFEST_REPO = 'https://github.com/Johnjose10/foodista-app.git'
         MANIFEST_BRANCH = 'main'
         MANIFEST_FILE = 'foodista/manifests/deployment.yaml'
     }

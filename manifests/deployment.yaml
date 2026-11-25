@@ -1,0 +1,55 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: foodista
+  namespace: production
+  labels:
+    app: foodista
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: foodista
+
+  template:
+    metadata:
+      labels:
+        app: foodista
+
+    spec:
+      containers:
+        - name: foodista
+          image: docker777john/foodista:latest
+          imagePullPolicy: Always
+
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+
+            limits:
+              cpu: 250m
+              memory: 128Mi
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20

@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: foodista
-          image: docker777john/foodista:latest
+          image: docker777john/foodista:2
           imagePullPolicy: Always
 
           ports:

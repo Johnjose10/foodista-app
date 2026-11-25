@@ -17,7 +17,7 @@ pipeline {
         // Manifest repository configuration
         MANIFEST_REPO = 'https://github.com/Johnjose10/foodista-app.git'
         MANIFEST_BRANCH = 'main'
-        MANIFEST_FILE = 'foodista/manifests/deployment.yaml'
+        MANIFEST_FILE = 'manifests/deployment.yaml'
     }
 
     stages {
